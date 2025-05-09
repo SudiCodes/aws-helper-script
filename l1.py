@@ -1,179 +1,65 @@
-Cybage
-'''
+Publicis Sapient
 
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
+a = [1,2,3,4]
+b = [3,4,5,6]
 
-'''
+# print(set(a).intersection(set(b)))
 
+res = [i+j for i,j in zip(a,b)]
 
-# Sort the data by age
-
-persons = [
-
-	{
-
-	 "id": 1,
-
-	 "fname": "Albert",
-
-	 "age": 35
-
-	},
-
-	{
-
-	 "id": 2,
-
-	 "fname": "Issac",
-
-	 "age": 32
-
-	},
-
-	{
-
-	 "id": 3,
-
-	 "fname": "James",
-
-	 "age": 33
-
-	},
-
-	{
-
-	 "id": 4,
-
-	 "fname": "Edison",
-
-	 "age": 32
-
-	}
-
-]
-
-
-res =  sorted(persons,key = lambda x:x["age"])
 # print(res)
 
+import time
 
-# Given a list 
-
-persons = [
-
-    {
-
-        "id": 1,
-
-        "name": "Alice Johnson",
-
-        "gender": "Female",
-
-        "date_of_birth": "1985-07-23",
-
-        "salary": 75000,
-
-        "department": "Engineering"
-
-    },
-
-    {
-
-        "id": 2,
-
-        "name": "Bob Smith",
-
-        "gender": "Male",
-
-        "date_of_birth": "1978-11-15",
-
-        "salary": 68000,
-
-        "department": "Sales"
-
-    },
-
-    {
-
-        "id": 3,
-
-        "name": "Carol Williams",
-
-        "gender": "Female",
-
-        "date_of_birth": "1992-04-08",
-
-        "salary": 72000,
-
-        "department": "Engineering"
-
-    },
-
-    {
-
-        "id": 4,
-
-        "name": "David Brown",
-
-        "gender": "Male",
-
-        "date_of_birth": "1989-11-30",
-
-        "salary": 80000,
-
-        "department": "Sales"
-
-    },
-
-    {
-
-        "id": 5,
-
-        "name": "Emma Davis",
-
-        "gender": "Female",
-
-        "date_of_birth": "1975-12-20",
-
-        "salary": 90000,
-
-        "department": "Sales"
-
-    },
-
-    {
-
-        "id": 6,
-
-        "name": "Frank Miller",
-
-        "gender": "Male",
-
-        "date_of_birth": "1982-07-14",
-
-        "salary": 85000,
-
-        "department": "Operations"
-
-    }
-
-]
-
-# 1) Group together persons that have birthdays in the same month
-
-user_grp = {}
-
-for i in persons:
-    
-    if i["date_of_birth"].split("-")[1] not in user_grp:
-        user_grp[i["date_of_birth"].split("-")[1]] = []
-    
-    user_grp[i["date_of_birth"].split("-")[1]].append(i["name"])
-
-print(user_grp)
+def decorator(func):
+    def wrapper(*arg):
+        t1 = time.time()
+        func(*arg)
+        t2 = time.time()
+        t = t2 - t1
         
+        print(f"time elapsed {t}")
+    
+    return wrapper
+
+@decorator
+def count(num):
+	for i in range(1,num):
+		print(i)
+		
+
+# count(5)
+
+class A: pass  
+
+class B(A): pass  
+
+class C(A): pass  
+
+class D(B, C): pass
+
+# D -> B -> A -> C -> A
+# print(D.mro())
+ 
+def flatten(arr):
+    # if len(arr) == 1:
+    #     return arr
+     
+    res = []
+    
+    for i in arr:
+        if type(i) == list:
+            flatten(i)
+        res
+    return res
+    
+         
+    
+ 
+flatten([1, [2, [3, 4], 5]]) #→ [1, 2, 3, 4, 5]
+ 
+ 
+
+
  
 
