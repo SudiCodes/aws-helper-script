@@ -13,7 +13,11 @@
 # What are exceptions and errors?
 # What is the difference between a temporary table and a table variable?
 # Write an SQL query to find the second highest salary.
-# What is multiple inheritance,MULTILEVEL, HYBRID
+# Single inheritance
+# Multiple inheritance
+# Multilevel inheritance
+# Hierarchical inheritance
+# Hybrid inheritance
 # Explain method overriding and overloading?
 # caching in django and noraml caching, typical usecase
 # Can static methods be overridden?
@@ -31,3 +35,4 @@
 # matching ID values in both tables .
 # Given an Employee Table, find the Nth highest salary from it.
 # Explain SOLID principles in Object Oriented Design .
+
