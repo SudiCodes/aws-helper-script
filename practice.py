@@ -1,5 +1,4 @@
 # Write code to reverse an array.
-# What is REST? Explain POST.
 # What is a Web API (application programming interface)?
 # Explain oops concept also MVT architech
 # Hashmap vs Lists
@@ -23,6 +22,23 @@
 # Can static methods be overridden?
 # Count Ways to Reach the N-th Stair Problem Statement
 # You are provided with a number of stairs, and initially, you are located at the 0th stair. You need to reach the Nth stair, and you can climb one or two steps at a time. Your task is to determine the number of distinct ways to climb from the 0th to the Nth stair.
+def count_ways_reach(n):
+    if n==0 or n==1:
+        return 1
+    
+    dp = [0]*(n+1)
+    dp[0],dp[1] = 1,1
+    
+    for i in range(2,n+1):
+        dp[i] = dp[i-1] + dp[i-2]
+        
+    print(dp)
+        
+    return dp[n]
+
+n = 5 
+print(count_ways_reach(5))
+
 # Sort Array Problem Statement
 # Given an array consisting of 'N' positive integers where each integer is either 0, 1, or 2, your task is to sort the given array in non-decreasing order.
 # What is dependency injection?
